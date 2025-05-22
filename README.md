@@ -34,3 +34,4 @@ As a final-year Computer Science student passionate about health-focused data sc
 ```bash
 pip install pandas numpy seaborn matplotlib scikit-learn
 python diabetes_prediction.py
+"# diabetes-prediction-app" 
