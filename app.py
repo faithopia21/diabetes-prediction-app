@@ -1,3 +1,7 @@
+from PIL import Image
+image = Image.open('banner.png')
+st.image(image, use_column_width=True)
+
 import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -16,7 +20,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 
+st.set_page_config(page_title="Diabetes Prediction App", layout="centered")
+
 st.title("Diabetes Prediction App")
+st.markdown("""
+This app uses **machine learning** to predict the likelihood of having **diabetes** based on health data.
+""")
 
 st.write("Enter the patient's health data below:")
 
@@ -57,3 +66,17 @@ st.write(diabetes_label[prediction[0]])
 st.subheader('Prediction Probability')
 st.write(f"Probability of no diabetes: {prediction_proba[0][0]:.2f}")
 st.write(f"Probability of diabetes: {prediction_proba[0][1]:.2f}")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    pregnancies = st.number_input('Pregnancies', 0, 20, step=1)
+    glucose = st.slider('Glucose', 0, 200, 120)
+    blood_pressure = st.slider('Blood Pressure', 0, 140, 70)
+
+with col2:
+    skin_thickness = st.slider('Skin Thickness', 0, 100, 20)
+    insulin = st.slider('Insulin', 0, 900, 80)
+    BMI = st.number_input('BMI', 0.0, 70.0, 24.0)
+    diabetes_pedigree = st.slider('Diabetes Pedigree Function', 0.0, 2.5, 0.5)
+    age = st.number_input('Age', 1, 100, 33)
