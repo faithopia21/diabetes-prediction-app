@@ -1,11 +1,13 @@
-from PIL import Image
-image = Image.open('banner.png')
-st.image(image, use_column_width=True)
+
 
 import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+
+from PIL import Image
+image = Image.open('banner.png')
+st.image(image, use_column_width=True)
 
 # Load dataset
 url = "https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv"
