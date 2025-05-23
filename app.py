@@ -1,13 +1,15 @@
-
-
 import streamlit as st
 import pandas as pd
+import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 
-from PIL import Image
-image = Image.open('banner.png')
-st.image(image, use_column_width=True)
+st.set_page_config(page_title="Diabetes Prediction App", layout="centered")
+
+st.image("your_banner.png", use_container_width=True)
+st.title("Diabetes Prediction App")
+st.markdown("""
+This app uses **machine learning** to predict the likelihood of having **diabetes** based on health data.
+""")
 
 # Load dataset
 url = "https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv"
@@ -21,13 +23,6 @@ y = df['Outcome']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
-
-st.set_page_config(page_title="Diabetes Prediction App", layout="centered")
-
-st.title("Diabetes Prediction App")
-st.markdown("""
-This app uses **machine learning** to predict the likelihood of having **diabetes** based on health data.
-""")
 
 st.write("Enter the patient's health data below:")
 
