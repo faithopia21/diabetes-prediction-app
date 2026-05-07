@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model
-model = 
+model = joblib.load("diabetes_model.pkl")
 joblib.load("diabetes_model.pkl")
 
 st.set_page_config(page_title="Diabetes Prediction App", layout="centered")
