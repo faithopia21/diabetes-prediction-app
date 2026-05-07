@@ -20,11 +20,11 @@ This project uses a logistic regression model to predict the likelihood of diabe
 - Exploratory Data Analysis (EDA)
 - Logistic Regression Model
 - Accuracy and Evaluation Metrics
-- Visualizations (heatmaps, confusion matrix)
+- Visualisations (heatmaps, confusion matrix)
 
 ## 💡 Why This Project?
 
-As a final-year Computer Science student passionate about health-focused data science, this project is part of my journey to apply machine learning to real-world medical challenges — especially for underrepresented communities.
+As a final-year Computer Science student passionate about health-focused data science, this project is part of my journey to apply machine learning to real-world medical challenges, especially for underrepresented communities.
 
 ## 🚀 How to Run
 
