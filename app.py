@@ -80,7 +80,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Prediction Result")
-    if pred == 1:
+    if prediction == 1:
         st.error("High Risk of Diabetes Detected")
     else:
         st.success("Low Risk of Diabetes Detected")
