@@ -192,9 +192,9 @@ def generate_healthcare_pdf(data_dict, prediction, proba):
     buffer.seek(0)
     return buffer
 
-data_dict = input_df.iloc[0].to_dict()
+data_dict = input_data.iloc[0].to_dict()
 
-pdf_file = generate_healthcare_pdf(data_dict, pred, proba)
+pdf_file = generate_healthcare_pdf(data_dict, prediction, proba)
 
 st.download_button(
     label="Download Clinical PDF Report",
